@@ -159,6 +159,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="mt-[10px] text-center pb-6">
+  <p className="font-satoshi text-[14px] font-medium text-black/70">
+    ©2023 Elementum. All rights reserved
+  </p>
+</div>
     </footer>
   );
 }
