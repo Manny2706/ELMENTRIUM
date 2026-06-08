@@ -11,59 +11,74 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[white] h-300">
-
+    <section className="relative overflow-hidden bg-white min-h-screen lg:h-[1200px]">
+      {/* Background Curves */}
       <img
         src="/Vector 2510.png"
         alt=""
         className="
+        hidden lg:block
           absolute
-          top-85
-          left-0
-          -translate-x-1/3
-          
+          top-[55%]
+          left-[-120px]
+          md:left-[-80px]
+          lg:top-85
+          lg:left-0
+          lg:-translate-x-1/3
+          w-[250px]
+          md:w-auto
           pointer-events-none
-        
         "
-      /><img
+      />
+
+      <img
         src="/Vector 2511.png"
         alt=""
         className="
+        hidden lg:block
           absolute
-          top-85
-          left-20
-          -translate-x-1/3
-          
+          top-[55%]
+          left-0
+          md:left-10
+          lg:top-85
+          lg:left-20
+          lg:-translate-x-1/3
+          w-[250px]
+          md:w-auto
           pointer-events-none
-        
         "
       />
 
-      <div className="container mx-auto px-6 pt-16 lg:pt-20">
-<img
-        src="/purple-shape.png"
-        alt=""
-        className="
-          absolute
-          right-15
-          top-34
-          w-32
-          md:w-48
-          rotate-[180deg]
-          scale-60
-          pointer-events-none
-        "
-      />
+      <div className="container mx-auto px-4 md:px-6 pt-12 md:pt-16 lg:pt-20">
+        {/* Purple Shape */}
+        <img
+          src="/purple-shape.png"
+          alt=""
+          className="
+            absolute
+            right-2
+            md:right-8
+            lg:right-15
+            top-20
+            md:top-24
+            lg:top-34
+            w-20
+            md:w-32
+            lg:w-48
+            rotate-[180deg]
+            scale-60
+            pointer-events-none
+          "
+        />
+
         {/* Heading */}
         <div className="max-w-6xl mx-auto text-center relative">
-
-          
-
           <h1
             className="
               logo-font
-              text-[42px]
-              md:text-[72px]
+              text-[36px]
+              sm:text-[48px]
+              md:text-[60px]
               lg:text-[80px]
               leading-[1.1]
               tracking-[-0.03em]
@@ -72,38 +87,46 @@ export default function Hero() {
               z-20
             "
           >
-            The thinkers and 
+            The thinkers and
             <br />
-            <img
-            src="/yellow-stroke.png"
-            alt=""
-            className="
-              absolute
-              left-150
-              -translate-x-1/2
-              top-18
-              w-[420px]
-            "
-          />
-            doers were ch{""}
 
-            <span className="inline-block bg-[#E8B5DF] px-0  md:px-[8] py-3 rounded-full">anging 
+            {/* Yellow Stroke */}
+            <img
+              src="/yellow-stroke.png"
+              alt=""
+              className="
+                absolute
+                left-1/2
+                -translate-x-1/2
+                top-[60px]
+                sm:top-[110px]
+                md:top-[50px]
+                lg:left-150
+                lg:top-18
+                w-[180px]
+                sm:w-[250px]
+                md:w-[320px]
+                lg:w-[420px]
+              "
+            />
+
+            doers were ch{" "}
+            <span className="inline-block bg-[#E8B5DF] px-2 md:px-4 py-2 md:py-3 rounded-full">
+              anging
             </span>
 
             <br />
 
             the{" "}
-
-            <span className="inline-block bg-[#DDE8DA] px-5 md:px-8 py-1 rounded-full">
+            <span className="inline-block bg-[#DDE8DA] px-4 md:px-8 py-1 rounded-full">
               status
             </span>{" "}
-
             Quo with
           </h1>
 
           <p
             className="
-              mt-8
+              mt-6 md:mt-8
               max-w-2xl
               mx-auto
               text-[#555]
@@ -111,6 +134,7 @@ export default function Hero() {
               md:text-base
               leading-relaxed
               font-satoshi
+              px-4 md:px-0
             "
           >
             We are a team of strategists, designers, communicators,
@@ -119,9 +143,32 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Avatars */}
-        <div className="relative h-[350px] mt-16 lg:mt-20 hidden md:block">
+        {/* Mobile Avatar Grid */}
+        <div className="grid grid-cols-4 gap-3 mt-12 md:hidden max-w-sm mx-auto">
+          {avatars.map((avatar, index) => (
+            <img
+              key={index}
+              src={avatar}
+              alt=""
+              className="w-16 h-16 rounded-full object-cover border-4 border-white"
+            />
+          ))}
+        </div>
 
+        {/* Tablet Avatar Grid */}
+        <div className="hidden md:grid lg:hidden grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto">
+          {avatars.map((avatar, index) => (
+            <img
+              key={index}
+              src={avatar}
+              alt=""
+              className="w-24 h-24 rounded-full object-cover border-4 border-white mx-auto"
+            />
+          ))}
+        </div>
+
+        {/* Desktop Avatar Layout - Unchanged */}
+        <div className="relative h-[350px] mt-16 lg:mt-20 hidden lg:block">
           <img
             src={avatars[0]}
             alt=""
@@ -163,13 +210,13 @@ export default function Hero() {
             alt=""
             className="absolute right-0 bottom-10 w-32 h-32 rounded-full object-cover border-4 border-white"
           />
+
           <img
             src={avatars[7]}
             alt=""
-            className="absolute left-[62%] bottom-10 w-32 h-32 rounded-full object-cover border-4 border-white "
+            className="absolute left-[62%] bottom-10 w-32 h-32 rounded-full object-cover border-4 border-white"
           />
         </div>
-
       </div>
     </section>
   );
