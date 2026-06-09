@@ -110,17 +110,17 @@ export default function Hero() {
               "
             />
 
-            doers were ch{" "}
+            doers were ch{""}
             <span className="inline-block bg-[#E8B5DF] px-2 md:px-4 py-2 md:py-3 rounded-full">
               anging
             </span>
 
             <br />
 
-            the{" "}
+            the{""}
             <span className="inline-block bg-[#DDE8DA] px-4 md:px-8 py-1 rounded-full">
               status
-            </span>{" "}
+            </span>{""}
             Quo with
           </h1>
 
